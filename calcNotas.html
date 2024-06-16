@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Notas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Calculadora de Notas</h2>
+        <input type="number" id="nota1" placeholder="Nota 1"><br>
+        <input type="number" id="nota2" placeholder="Nota 2"><br>
+        <input type="number" id="nota3" placeholder="Nota 3"><br>
+        <button onclick="calcularMedia()">Calcular Média</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function calcularMedia() {
+            var nota1 = parseFloat(document.getElementById('nota1').value);
+            var nota2 = parseFloat(document.getElementById('nota2').value);
+            var nota3 = parseFloat(document.getElementById('nota3').value);
+
+            var media = (nota1 + nota2 + nota3) / 3;
+
+            if (media >= 60) {
+                document.getElementById('resultado').innerText = "Parabéns! Você foi aprovado com média " + media.toFixed(2);
+            } else {
+                document.getElementById('resultado').innerText = "Infelizmente, você não atingiu a média mínima. Sua média foi " + media.toFixed(2);
+            }
+        }
+    </script>
+</body>
+</html>
